@@ -231,7 +231,7 @@ console.log(prac_stim)
       type: jsPsychSurveyMultiSelect,
       questions: [
     {
-      prompt: " 您好。感謝您參與這項研究。我們正在研究ALD abcdefg。請點選以下同意繼續。", 
+      prompt: " 您好。感謝您參與這項研究。我們正在研究聽寫反應速度和準確率。請點選以下同意繼續。", 
       options: ["我已閱讀上述資訊並收到了我提出的問題的答案。我同意參加這項研究，我已年滿 18 歲。"], 
       horizontal: true,
       required: true,
@@ -244,18 +244,15 @@ console.log(prac_stim)
       type: jsPsychHtmlButtonResponse,
       data: { screen: "instruction_2" },
 			stimulus: `
-      <p>在實驗裏，您會teng1到一連串的中文複合詞and非复合词。
-      <p class="blue-line"><b>您的工作是写下每一個複合詞并判斷准确性。
-      <p><b>xxxxx，
-      請注意其出現的地方。然後，複合詞會出現並在螢幕上停留一段短時間。
-      這個時候，請評定您認為該複合詞是表達正面或是負面的意思。
-      <p class="red-line"><b>如果意思是<u>負面</u>, 請按下「A」鍵。
-      <p class="red-line"><b>如果意思是<u>正面</u>, 請按下「L」鍵。
-      請作出快速而準確的按鍵反應。
-      <p>當畫面完全載入後，下面的按鈕將會啟動。
-      點擊它表示您已閱讀並明白以上說明。 </p>
-      <p><i><u><b>請在仔細閱讀以上說明然後繼續操作，
-      並且確認您已經準備好！`,
+    <p>在實驗裏，您會聽到一系列的中文<p class="pink-line"><b>複合詞</b></u>或<p class="pink-line"><b>非複合詞</b></u>。</p>
+    <p class="blue-line"><b>您的任務是寫下每一個複合詞並判斷準確性。</b></p>
+    <p>請用桌面上<p class="pink-line"><b>觸控筆</b></u>在<p class="pink-line"><b>電子手寫板</b></u>上盡快寫下您聽到的複合詞；若聽到的是<b>非複合詞</b></u>，您只需要在手寫板上標記‘x’即可繼續下一步。</p>
+    <p>聽寫完畢後，您需要用鍵盤上的1至9表示您對聽寫此詞語的信心。</p>
+    <p class="red-line"><b>若對準確率<u>非常有信心</u>，請按下「9」鍵。</b></p>
+    <p class="red-line"><b>若對準確率<u>非常沒有信心</u>，請按下「1」鍵。</b></p>
+    <p>當畫面完全載入後，下面的按鈕將會啟動。點擊它表示您已閱讀並明白以上說明。</p>
+    <p><i><u><b>請在仔細閱讀以上說明然後繼續操作，並且確認您已經準備好！</b></u></i></p>
+  `,
 			choices: ["繼續"]
 		};
     timeline.push(instruction_2)
@@ -408,7 +405,7 @@ var interval = {
 
     var rest = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: '<p> Take a break. Press button to continue.',
+      stimulus: '<p> 自行選擇是否休息片刻。點擊下方按鈕以繼續。',
       choices: ['continue'],
       response_ends_trial: true,
       data: { screen: "rest"},
@@ -466,7 +463,7 @@ var interval = {
       type: jsPsychHtmlButtonResponse,
       data: { screen: "thankyou_page" },
 			stimulus: `
-          <p>Thank you for your participation! Please click to finish. </p>`,
+          <p>感謝您的參與，點擊按鈕以完成實驗。 </p>`,
 			choices: ["結束"]
 		}
     timeline.push(thankyou)
